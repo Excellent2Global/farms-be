@@ -30,6 +30,11 @@ module.exports = {
       isIn: ['root', 'admin', 'manager', 'staff'],
       required: true
     },
+    
+    permission: {
+      type: 'string',
+      isIn: ['general', 'farms', 'properties', 'transportation', 'foundation']
+    },
 
     passwordResetToken: {
       type: 'string'
