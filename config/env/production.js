@@ -104,6 +104,11 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     // cascadeOnDestroy: false,
+    attributes: {
+      createdAt: { type: 'number', autoCreatedAt: true, },
+      updatedAt: { type: 'number', autoUpdatedAt: true, },
+      id: { type: 'string', columnName: '_id' },
+    },
 
   },
 
