@@ -20,7 +20,7 @@ module.exports.seeds = {
     address: 'cloud server',
     city: 'bauchi',
     state: 'bauchi',
-    dateOfBirth: '2018-09-29',
+    dateOfBirth: '1991-01-25',
     stateOfOrigin: 'abuja',
     pictureUrl: 'https://www.sideshowtoy.com/wp-content/uploads/2018/04/marvel-avengers-infinity-war-thanos-sixth-scale-figure-hot-toys-feature-903429-1.jpg'
   }],
