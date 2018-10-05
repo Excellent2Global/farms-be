@@ -30,9 +30,10 @@ module.exports = {
       isIn: ['root', 'admin', 'manager', 'staff'],
       required: true
     },
-    
+
     permission: {
       type: 'string',
+      required: true,
       isIn: ['general', 'farms', 'properties', 'transportation', 'foundation']
     },
 
