@@ -64,12 +64,12 @@ module.exports = {
   },
 
   beforeCreate: (values, next) => {
-    Cipher.hashPassword(values);
+    CipherService.hashPassword(values);
     next();
   },
 
   beforeUpdate: (values, next) => {
-    Cipher.hashPassword(values);
+    CipherService.hashPassword(values);
     next();
   },
 
