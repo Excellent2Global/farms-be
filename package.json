@@ -7,8 +7,13 @@
   "dependencies": {
     "@sailshq/lodash": "^3.10.3",
     "async": "2.0.1",
+    "bcrypt-nodejs": "0.0.3",
     "deep-extend": "^0.6.0",
+    "jsonwebtoken": "^8.3.0",
     "lodash": "^4.17.11",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
     "sails": "^1.0.2",
     "sails-hook-orm": "^2.0.0-16",
     "sails-hook-sockets": "^1.4.0",
