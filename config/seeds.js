@@ -9,28 +9,34 @@
  */
 module.exports.seeds = {
   // Initial UserProfile data
-  userprofile: [{
-    username: 'thanos',
-    firstName: 'Dione',
-    middlename: '',
-    lastName: 'Thanos',
-    emailAddress: 'thanos@excellent2global.com',
-    phoneNumber: '08060686834',
-    gender: 'male',
-    address: 'cloud server',
-    city: 'bauchi',
-    state: 'bauchi',
-    dateOfBirth: '1991-01-25',
-    stateOfOrigin: 'abuja',
-    pictureUrl: 'https://www.sideshowtoy.com/wp-content/uploads/2018/04/marvel-avengers-infinity-war-thanos-sixth-scale-figure-hot-toys-feature-903429-1.jpg'
-  }],
+  userprofile: {
+    data: [{
+      username: 'thanos',
+      firstName: 'Dione',
+      middlename: '',
+      lastName: 'Thanos',
+      emailAddress: 'thanos@excellent2global.com',
+      phoneNumber: '08060686834',
+      gender: 'male',
+      address: 'cloud server',
+      city: 'bauchi',
+      state: 'bauchi',
+      dateOfBirth: '1991-01-25',
+      stateOfOrigin: 'abuja',
+      pictureUrl: 'https://www.sideshowtoy.com/wp-content/uploads/2018/04/marvel-avengers-infinity-war-thanos-sixth-scale-figure-hot-toys-feature-903429-1.jpg'
+    }],
+    overwrite: true
+  },
 
   // Initial User data
-  user: [{
-    username: 'thanos',
-    password: 'b@Da55t!TAu#',
-    userRole: 'root',
-    permission: 'general',
-    userStatus: 'active'
-  }]
+  user: {
+    data: [{
+      username: 'thanos',
+      password: 'b@Da55t!TAu#',
+      userRole: 'root',
+      permission: 'general',
+      userStatus: 'active'
+    }],
+    overwrite: true
+  }
 };
