@@ -7,7 +7,6 @@
  * For more information on configuring custom routes, check out:
  * https://sailsjs.com/anatomy/config/routes-js
  */
-const API_BASE = '/api/v1/';
 
 module.exports.routes = {
 
