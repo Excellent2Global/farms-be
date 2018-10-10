@@ -6,7 +6,21 @@
  */
 
 module.exports = {
-  
+  addFarm: (req, res) => {},
+
+  fetchFarms: (req, res) => {},
+
+  getFarmById: (req, res) => {},
+
+  updateFarm: (req, res) => {},
+
+  addHall: (req, res) => {},
+
+  updateHall: (req, res) => {},
+
+  addPond: (req, res) => {},
+
+  updatePond: (req, res) => {},
 
 };
 
