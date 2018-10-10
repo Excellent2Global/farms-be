@@ -10,7 +10,7 @@ module.exports = {
     sails.log.info('POST /farm');
     let farmDetails = req.body;
 
-    var newFarmDetails = await Farm.create(
+    await Farm.create(
       Object.assign({
         shortName: farmDetails.shortName,
         address: farmDetails.address,
@@ -56,6 +56,7 @@ module.exports = {
   getFarmById: async (req, res) => {
     sails.log.info('GET /farm/:farmId');
     var farmId = req.param('farmId');
+
     var payload = await Farm.findOne({
         _id: farmId
       })
@@ -73,14 +74,35 @@ module.exports = {
 
     res.ok({
       code: 200,
-      message: 'Staff record fetched successfully',
+      message: 'Farm record fetched successfully',
       farms: payload
     });
   },
 
   updateFarm: (req, res) => {},
 
-  addHall: (req, res) => {},
+  addHall: async (req, res) => {
+    sails.log.info('POST /farm/:farmId/hall');
+    let farmId = req.param('farmId');
+    let hallDetails = req.body;
+
+    await Hall.create({
+      shortName: hallDetails.shortName,
+      capacity: hallDetails.capacity,
+      status: 'active',
+      farm: farmId
+    })
+    .intercept((error) => {
+      res.json({
+        error
+      });
+    });
+
+    res.ok({
+      code: 200,
+      message: 'Hall added to farm successfully',
+    });
+  },
 
   updateHall: (req, res) => {},
 
