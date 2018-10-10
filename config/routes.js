@@ -34,6 +34,10 @@ module.exports.routes = {
   'GET /v1/staff/:username': 'StaffController.getStaffByUsername',
   'PUT /v1/staff/:username': 'StaffController.updateStaff',
 
+  'GET /v1/farm': 'FarmController.fetchStaff',
+  'POST /v1/farm': 'FarmController.addFarm',
+  'GET /v1/farm/:farmId': 'FarmController.getFarmById',
+  'PUT /v1/farm/:farmId': 'FarmController.updateFarm',
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
   //  ║║║║╣ ╠╩╗╠═╣║ ║║ ║╠╩╗╚═╗
