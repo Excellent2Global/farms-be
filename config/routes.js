@@ -31,6 +31,7 @@ module.exports.routes = {
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
   'GET /v1/staff': 'StaffController.fetchStaff',
   'POST /v1/staff': 'StaffController.addStaff',
+  'GET /v1/staff/:username': 'StaffController.getStaffByUsername',
 
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗

@@ -28,7 +28,8 @@ module.exports = {
           dateOfBirth: staffDetails.dateOfBirth,
           stateOfOrigin: staffDetails.stateOfOrigin,
           pictureUrl: staffDetails.pictureUrl
-        }))
+        })
+        )
       .intercept((err) => {
         return res.json({
           err
@@ -87,6 +88,37 @@ module.exports = {
     res.ok({
       code: 200,
       message: 'Staff record fetched successfully',
+      staff: payload
+    });
+  },
+
+  /**
+   * Get details of one staff
+   */
+  getStaffByUsername: async (req, res) => {
+    sails.log.info('/GET /staff/:username');
+    var staffUsername = req.param('username');
+    var staffDetails = await Staff.findOne({username: staffUsername});
+    var payload = {
+      id: staffDetails.id,
+      username: staffDetails.username,
+      firstName: staffDetails.firstName,
+      middlename: staffDetails.middlename,
+      lastName: staffDetails.lastName,
+      emailAddress: staffDetails.emailAddress,
+      phoneNumber: staffDetails.phoneNumber,
+      gender: staffDetails.gender,
+      address: staffDetails.address,
+      city: staffDetails.city,
+      state: staffDetails.state,
+      dateOfBirth: staffDetails.dateOfBirth,
+      stateOfOrigin: staffDetails.stateOfOrigin,
+      pictureUrl: staffDetails.pictureUrl
+    };
+
+    res.ok({
+      code: 200,
+      message: 'Staff details gotten successfully',
       staff: payload
     });
   }
