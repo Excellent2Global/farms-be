@@ -6,9 +6,6 @@
  */
 
 module.exports = {
-  /**
-   * Create a new staff
-   */
   addStaff: async (req, res) => {
     sails.log.info('POST /staff');
     let staffDetails = req.body;
@@ -59,9 +56,6 @@ module.exports = {
     });
   },
 
-  /**
-   * Fetch all staff in the system
-   */
   fetchStaff: async (req, res) => {
     sails.log.info('/GET /staff');
     var payload = [];
@@ -98,9 +92,6 @@ module.exports = {
     });
   },
 
-  /**
-   * Get details of one staff
-   */
   getStaffByUsername: async (req, res) => {
     sails.log.info('/GET /staff/:username');
     var staffUsername = req.param('username');
@@ -136,9 +127,6 @@ module.exports = {
     });
   },
 
-  /**
-   * Update staff details
-   */
   updateStaff: async (req, res) => {
     sails.log.info('PUT /staff');
     var staffUsername = req.param('username');
