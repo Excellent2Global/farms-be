@@ -42,6 +42,10 @@ module.exports = {
         });
       });
 
+    if (!payload) {
+      return res.notFound('Could not find any farm, sorry.');
+    }
+
     res.ok({
       code: 200,
       message: 'Staff record fetched successfully',
@@ -49,7 +53,30 @@ module.exports = {
     });
   },
 
-  getFarmById: (req, res) => {},
+  getFarmById: async (req, res) => {
+    sails.log.info('GET /farm/:farmId');
+    var farmId = req.param('farmId');
+    var payload = await Farm.findOne({
+        _id: farmId
+      })
+      .populate('halls')
+      .populate('ponds')
+      .intercept((err) => {
+        return res.json({
+          err
+        });
+      });
+
+    if (!payload) {
+      return res.notFound('Could not find farm, sorry.');
+    }
+
+    res.ok({
+      code: 200,
+      message: 'Staff record fetched successfully',
+      farms: payload
+    });
+  },
 
   updateFarm: (req, res) => {},
 
