@@ -49,7 +49,7 @@ module.exports = {
     userStatus: {
       type: 'string',
       isIn: ['active', 'inactive'],
-      required: true
+      defaultsTo: 'active'
     }
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗

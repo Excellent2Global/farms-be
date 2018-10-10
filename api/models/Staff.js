@@ -70,7 +70,6 @@ module.exports = {
 
     pictureUrl: {
       type: 'string',
-      required: true
     }
 
 
@@ -84,5 +83,9 @@ module.exports = {
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
 
   },
+
+  customToJSON: () => {
+    return _.omit(this, ['createdAt', 'updatedAt']);
+  }
 
 };
