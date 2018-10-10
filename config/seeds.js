@@ -8,8 +8,8 @@
  * http://github.com/frostme/sails-seed
  */
 module.exports.seeds = {
-  // Initial UserProfile data
-  userprofile: {
+  // Initial Staff data
+  staff: {
     data: [{
       username: 'thanos',
       firstName: 'Dione',
