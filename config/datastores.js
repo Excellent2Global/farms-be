@@ -48,8 +48,8 @@ module.exports.datastores = {
     *    (See https://sailsjs.com/config/datastores for help.)                 *
     *                                                                          *
     ***************************************************************************/
-    adapter: 'sails-mysql',
-    url: process.env.CLEARDB_DATABASE_URL || 'mysql://bcd0f4959c8ae3:b83343d3@us-cdbr-iron-east-01.cleardb.net/heroku_7e3152eea5a60f5?reconnect=true'
+    adapter: 'sails-mongo',
+    url: process.env.MONGOLAB_BLACK_URI
 
   },
 
