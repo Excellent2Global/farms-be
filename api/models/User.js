@@ -73,7 +73,7 @@ module.exports = {
     next();
   },
 
-  customToJSON: () => {
+  customToJSON: function () {
     return _.omit(this, ['password', 'createdAt', 'updatedAt', 'passwordResetToken']);
   }
 

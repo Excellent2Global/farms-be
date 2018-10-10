@@ -55,6 +55,40 @@ module.exports = {
       code: 201,
       message: 'New staff added successfully'
     });
+  },
+
+  /**
+   * Fetch all staff in the system
+   */
+  fetchStaff: async (req, res) => {
+    sails.log.info('/GET /staff');
+    var payload = [];
+    var allStaff = await Staff.find();
+    allStaff.forEach(element => {
+      var items = {
+        id: element.id,
+        username: element.username,
+        firstName: element.firstName,
+        middlename: element.middlename,
+        lastName: element.lastName,
+        emailAddress: element.emailAddress,
+        phoneNumber: element.phoneNumber,
+        gender: element.gender,
+        address: element.address,
+        city: element.city,
+        state: element.state,
+        dateOfBirth: element.dateOfBirth,
+        stateOfOrigin: element.stateOfOrigin,
+        pictureUrl: element.pictureUrl
+      };
+      payload.push(items);
+    });
+
+    res.ok({
+      code: 200,
+      message: 'Staff record fetched successfully',
+      staff: payload
+    });
   }
 
 };
