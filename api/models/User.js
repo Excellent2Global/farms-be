@@ -49,7 +49,7 @@ module.exports = {
     userStatus: {
       type: 'string',
       isIn: ['active', 'inactive'],
-      required: true
+      defaultsTo: 'active'
     }
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
@@ -73,7 +73,7 @@ module.exports = {
     next();
   },
 
-  customToJSON: () => {
+  customToJSON: function () {
     return _.omit(this, ['password', 'createdAt', 'updatedAt', 'passwordResetToken']);
   }
 

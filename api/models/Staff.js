@@ -1,5 +1,5 @@
 /**
- * Userprofile.js
+ * Staff.js
  *
  * @description :: A model definition.  Represents a database table/collection/etc.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -12,32 +12,66 @@ module.exports = {
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
+    username: {
+      type: 'string',
+      unique: true,
+      required: true
+    },
 
-    username: { type: 'string', unique: true, required: true },
+    firstName: {
+      type: 'string',
+      required: true
+    },
 
-    firstName: { type: 'string', required: true },
+    middlename: {
+      type: 'string'
+    },
 
-    middlename: { type: 'string' },
+    lastName: {
+      type: 'string',
+      required: true
+    },
 
-    lastName: { type: 'string', required: true },
+    emailAddress: {
+      type: 'string'
+    },
 
-    emailAddress: { type: 'string' },
+    phoneNumber: {
+      type: 'string',
+      required: true,
+      maxLength: 11
+    },
 
-    phoneNumber: { type: 'string', required: true, maxLength: 11 },
+    gender: {
+      type: 'string',
+      required: true,
+      isIn: ['female', 'male']
+    },
 
-    gender: { type: 'string', required: true, isIn: ['female', 'male'] },
+    address: {
+      type: 'string'
+    },
 
-    address: { type: 'string' },
+    city: {
+      type: 'string'
+    },
 
-    city: { type: 'string' },
+    state: {
+      type: 'string'
+    },
 
-    state: { type: 'string' },
+    dateOfBirth: {
+      type: 'string'
+    },
 
-    dateOfBirth: { type: 'string' },
+    stateOfOrigin: {
+      type: 'string'
+    },
 
-    stateOfOrigin: { type: 'string' },
+    pictureUrl: {
+      type: 'string',
+    }
 
-    pictureUrl: { type: 'string', required: true }
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
@@ -51,8 +85,7 @@ module.exports = {
   },
 
   customToJSON: () => {
-    return _.omit(['createdAt', 'updatedAt']);
+    return _.omit(this, ['createdAt', 'updatedAt']);
   }
 
 };
-

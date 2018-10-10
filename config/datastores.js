@@ -49,7 +49,7 @@ module.exports.datastores = {
     *                                                                          *
     ***************************************************************************/
     adapter: 'sails-mysql',
-    url: process.env.CLEARDB_DATABASE_URL || 'mysql://b4deb5a4a94cea:b442a582@us-cdbr-iron-east-01.cleardb.net/heroku_7c6eab116ed342f?reconnect=true'
+    url: process.env.CLEARDB_DATABASE_URL || 'mysql://bcd0f4959c8ae3:b83343d3@us-cdbr-iron-east-01.cleardb.net/heroku_7e3152eea5a60f5?reconnect=true'
 
   },
 
