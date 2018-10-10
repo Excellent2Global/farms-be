@@ -9,7 +9,7 @@ module.exports = {
   /**
    * Create a new staff
    */
-  addStaff: (req, res) => {
+  addStaff: async (req, res) => {
     sails.log.info('POST /staff');
     let staffDetails = req.body;
 
@@ -62,7 +62,7 @@ module.exports = {
   /**
    * Fetch all staff in the system
    */
-  fetchStaff: (req, res) => {
+  fetchStaff: async (req, res) => {
     sails.log.info('/GET /staff');
     var payload = [];
     var allStaff = await Staff.find()
@@ -102,7 +102,7 @@ module.exports = {
   /**
    * Get details of one staff
    */
-  getStaffByUsername: (req, res) => {
+  getStaffByUsername: async (req, res) => {
     sails.log.info('/GET /staff/:username');
     var staffUsername = req.param('username');
     var staffDetails = await Staff.findOne({
@@ -141,7 +141,7 @@ module.exports = {
   /**
    * Update staff details
    */
-  updateStaff: (req, res) => {
+  updateStaff: async (req, res) => {
     sails.log.info('PUT /staff');
     var staffUsername = req.param('username');
     var updatedStaffRecord = await Staff.update({
