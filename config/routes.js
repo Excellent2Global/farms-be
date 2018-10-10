@@ -7,7 +7,6 @@
  * For more information on configuring custom routes, check out:
  * https://sailsjs.com/anatomy/config/routes-js
  */
-const API_BASE = '/api/v1/';
 
 module.exports.routes = {
 
@@ -34,6 +33,11 @@ module.exports.routes = {
   'GET /v1/staff/:username': 'StaffController.getStaffByUsername',
   'PUT /v1/staff/:username': 'StaffController.updateStaff',
 
+  'POST /v1/farm': 'FarmController.addFarm',
+  'GET /v1/farm': 'FarmController.fetchFarms',
+  'GET /v1/farm/:farmId': 'FarmController.getFarmById',
+  'POST /v1/farm/:farmId/hall': 'FarmController.addHall',
+  'POST /v1/farm/:farmId/pond': 'FarmController.addPond',
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
   //  ║║║║╣ ╠╩╗╠═╣║ ║║ ║╠╩╗╚═╗
