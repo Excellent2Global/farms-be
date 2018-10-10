@@ -74,7 +74,6 @@ module.exports = {
 
     allStaff.forEach(element => {
       var items = {
-        id: element.id,
         username: element.username,
         firstName: element.firstName,
         middlename: element.middlename,
@@ -115,7 +114,6 @@ module.exports = {
       });
 
     var payload = {
-      id: staffDetails.id,
       username: staffDetails.username,
       firstName: staffDetails.firstName,
       middlename: staffDetails.middlename,
@@ -169,7 +167,6 @@ module.exports = {
       .fetch();
 
     var payload = {
-      id: updatedStaffRecord.id,
       username: updatedStaffRecord.username,
       firstName: updatedStaffRecord.firstName,
       middlename: updatedStaffRecord.middlename,
