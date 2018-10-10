@@ -31,7 +31,23 @@ module.exports = {
     });
   },
 
-  fetchFarms: (req, res) => {},
+  fetchFarms: async (req, res) => {
+    sails.log.info('GET /farm');
+    var payload = await Farm.find()
+      .populate('halls')
+      .populate('ponds')
+      .intercept((err) => {
+        return res.json({
+          err
+        });
+      });
+
+    res.ok({
+      code: 200,
+      message: 'Staff record fetched successfully',
+      farms: payload
+    });
+  },
 
   getFarmById: (req, res) => {},
 
