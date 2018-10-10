@@ -106,7 +106,28 @@ module.exports = {
 
   updateHall: (req, res) => {},
 
-  addPond: (req, res) => {},
+  addPond: async (req, res) => {
+    sails.log.info('POST /farm/:farmId/pond');
+    let farmId = req.param('farmId');
+    let pondDetails = req.body;
+
+    await Pond.create({
+      shortName: pondDetails.shortName,
+      capacity: pondDetails.capacity,
+      status: 'active',
+      farm: farmId
+    })
+    .intercept((error) => {
+      res.json({
+        error
+      });
+    });
+
+    res.ok({
+      code: 200,
+      message: 'Pond added to farm successfully',
+    });
+  },
 
   updatePond: (req, res) => {},
 
